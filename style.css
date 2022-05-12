@@ -11,8 +11,66 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url("https://source.unsplash.com/random/1600x900/?landscape");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+#heading{
+    font-size: 4rem;
 }
 .container{
     display: flex;
-    gap: 10rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    gap: 2rem;
+}
+.left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    background-color: #000000cc;
+    padding: 25px 15px;
+    border-radius: 1.5em;
+    height: 70vh;
+    gap: 2rem;
+    color: #ffffffcc;
+}
+.search .search-bar{
+    border: none;
+    width: 22rem;
+    padding: 10px;
+    border-radius: 0.5rem;
+    font-size: 100%;
+    font-family: inherit;
+    outline: none;
+    color: #fff;
+    background-color: #8f8f8f7c;
+}
+.search button{
+    height: 3rem;
+    width: 3rem;
+    border-radius: .9rem;
+    border: none;
+    outline: none;
+    font-size: inherit;
+    background-color: #8f8f8f7c;
+    color: #858585;
+    cursor: pointer;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 30%;
+    background-color: #000000cc;
+    padding: 5px;
+    border-radius: 2em;
+    height: 60vh;
 }
