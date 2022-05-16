@@ -21,15 +21,26 @@ let weatherInfo = {
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
     const { country } = data.sys;
-    console.log(name, icon, description, temp, humidity, speed, country);
     document.querySelector(".city").innerText = name + " , " + country;
-    document.querySelector(".temp").innerText = temp + " °C";
+    document.querySelector(".temp").innerText = Math.round(temp) + " °C";
     document.querySelector(".icon").src =
       "https://openweathermap.org/img/wn/" + icon + ".png";
     document.querySelector(".description").innerText = description;
     document.querySelector(".humidity").innerText =
       "Humidity: " + humidity + "%";
     document.querySelector(".wind-speed").innerText =
-      "Wind Speed: " + speed + "%";
+      "Wind Speed: " + speed + "km/h";
+  },
+  searchWeather: function () {
+    this.getWeatherInfo(document.querySelector(".search-bar").value);
   },
 };
+document.querySelector(".search-button").addEventListener("click", function () {
+  weatherInfo.searchWeather();
+});
+document.querySelector(".search-bar").addEventListener("keyup", function (e) {
+  if (e.key == "Enter") {
+    weatherInfo.searchWeather();
+  }
+});
+weatherInfo.getWeatherInfo("nykarleby");
