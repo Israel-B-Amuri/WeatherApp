@@ -22,23 +22,22 @@ body{
 }
 .container{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 90%;
-    gap: 2rem;
-}
-.container{
-    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
     background-color: #000000cc;
     padding: 25px 15px;
     border-radius: 1.5em;
     height: 80%;
     gap: 2rem;
     color: #ffffffcc;
+}
+.digital-clock{
+   display: flex;
+   gap: 1.5rem;
+   padding: 20px;
+   font-size: 3rem;
 }
 .search .search-bar{
     border: none;
