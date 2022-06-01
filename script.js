@@ -1,12 +1,4 @@
 //Digital clock
-
-// Getting time elements from html to save them in new variables
-
-const hourElement = document.getElementById("hours");
-const minutesElement = document.getElementById("minutes");
-const secondsElement = document.getElementById("seconds");
-const timeOfTheDayElement = document.getElementById("time-of-the-day");
-
 //creating a function to update the time
 function updateTime() {
   //creating variables for time elements using the date method
@@ -14,22 +6,69 @@ function updateTime() {
   let minutes = new Date().getMinutes();
   let seconds = new Date().getSeconds();
   let timeOfTheDay = "AM";
-
+  let day = new Date().getDay();
+  let date = new Date().getDate();
+  let month = new Date().getMonth();
+  let year = new Date().getFullYear();
+  // Specifying what time of the day to use PM
   if (hours >= 12) {
     timeOfTheDay = "PM";
   }
-  /*modifying the time elements so that they
-show two digits per element
-*/
-  hours < 10 ? "0" + hours : hours;
-  minutes < 10 ? "0" + minutes : minutes;
-  seconds < 10 ? "0" + seconds : seconds;
-  //displaying time on html
+  // Setting two digits to values on date and time elements
+  Number.prototype.pad = function (digits) {
+    for (var n = this.toString(); n.length < digits; n = 0 + n);
+    return n;
+  };
+  //An array of months of the year
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  // An array of days of the year
 
-  hourElement.innerText = hours;
-  minutesElement.innerText = minutes;
-  secondsElement.innerText = seconds;
-  timeOfTheDayElement.innerText = timeOfTheDay;
+  let days = ["Sun", "Mon", "Teu", "Wed", "Thur", "Fri", "Sat"];
+
+  // An array of date and time ids
+
+  let ids = [
+    "hours",
+    "minutes",
+    "seconds",
+    "time-of-the-day",
+    "day",
+    "date",
+    "month",
+    "year",
+  ];
+
+  //an array of the values of the date and time ids
+
+  let values = [
+    hours.pad(2),
+    minutes.pad(2),
+    seconds.pad(2),
+    timeOfTheDay,
+    days[day],
+    date.pad(2),
+    months[month],
+    year,
+  ];
+
+  // A loop that links each id and its value to display it on the dom
+  for (let i = 0; i < ids.length; i++)
+    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+
+  //displaying time on html
 
   setTimeout(() => {
     updateTime();

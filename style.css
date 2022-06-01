@@ -1,3 +1,7 @@
+:root{
+    --digital-gradient-color: radial-gradient(circle farthest-corner at left center, #0022ff 0%, rgba(0,139,255,0.8) 40%, #00e9ff 80%);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -35,9 +39,17 @@ body{
 }
 .digital-clock{
    display: flex;
+   flex-direction: column;
    gap: 1.5rem;
-   padding: 20px;
-   font-size: 3rem;
+   padding: 25px;
+   justify-content: center;
+   align-items: center;
+}
+.clock{
+    font-size: 3rem;
+}
+.date{
+    color: rgb(116, 116, 116);
 }
 .search .search-bar{
     border: none;
