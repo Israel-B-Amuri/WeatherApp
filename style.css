@@ -20,6 +20,7 @@ body{
     background-size: cover;
     background-position: center;
     color: #fff;
+    width: 100vw;
 }
 #heading{
     font-size: 4rem;
@@ -49,11 +50,11 @@ body{
     font-size: 3rem;
 }
 .date{
-    color: rgb(116, 116, 116);
+    color: #747474;
 }
 .search .search-bar{
     border: none;
-    max-width: 90%;
+    max-width: 800px;
     padding: 10px;
     border-radius: 0.5rem;
     font-size: 100%;
